@@ -20,16 +20,32 @@ matrix::~matrix() {
 
 int matrix:: Getrows(string s)
 {
-    return count(s.begin(),s.end(),';')+1;
+   		int rows;
+		int postion = s.find("[");        // if martrix is empty ... so return rows =0 
+		s = s.substr(postion + 1);
+		s = s.erase(s.length() - 1);
+		if (s.length() == 0)
+			return rows = 0;
+
+		rows = count(s.begin(), s.end(), ';') + 1;
+		return rows;
 }
 
 int matrix:: Getcolumns(string s)
 {
-    int row = count(s.begin(),s.end(),';')+1;
-    return (count(s.begin(),s.end(),' ')+1)/row;
+		int columns;
+		string s1;
+		int postion = s.find("[");                // if martrix is empty ... so return columns =0 
+		s1 = s.substr(postion + 1);
+		s1 = s1.erase(s1.length() - 1);
+		if (s1.length() == 0)
+			return columns = 0;
+		int	rows = count(s.begin(), s.end(), ';') + 1;
+		columns = (count(s.begin(), s.end(), ' ') / rows) + 1;
+		return columns;
 }
 
-float** matrix::create_matrix(int rows, int columns) //MUST initialize all values to zero
+float** matrix::create_matrix(int rows, int columns)     //MUST initialize all values to zero
 {
 
 	float** matrix = new float*[rows];
