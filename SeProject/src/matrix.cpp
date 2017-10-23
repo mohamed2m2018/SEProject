@@ -8,8 +8,8 @@
 #include "matrix.h"
 
 matrix::matrix() {
-	rows = 0;
-    columns = 0;
+	 rows = 0;
+   	 columns = 0;
 
 }
 
@@ -135,7 +135,7 @@ float**matrix:: multiply_matrix(float** A, float** B, int rows, int columns)
 			for (int j = 0; j < columns; j++)
 			{
 				for (int k = 0; k < columns; k++)
-					result[i][j] += A[k][j] * B[i][k];
+					result[i][j] += A[i][k] * B[k][j];
 			}
 		}
 
