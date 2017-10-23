@@ -6,9 +6,9 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-#include <iostream>
+
 #include "matrix.h"
-using namespace std;
+
 
 int main() {
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
