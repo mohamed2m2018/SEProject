@@ -37,8 +37,8 @@ int main()
 	int pos1 = op.find('+');
 	int pos2 = op.find('-');
 	int pos3 = op.find('*');
-    int pos4A = op.find("A'");
-    int pos4B = op.find("B'");
+   	int pos4A = op.find("A'");
+ 	int pos4B = op.find("B'");
 
 
 	if(pos4A != -1)
@@ -55,7 +55,7 @@ int main()
     }
 
 
-	else if (m1 == m2 && n1 == n2 && pos1 != -1)                    // both matrices dimensions must be equal
+	else if (m1 == m2 && m1 !=0 && n1 == n2 && pos1 != -1)                    // both matrices dimensions must be equal
 	{
 		cout << "The summation result=" << endl;
 		C = M.sum_matrix(A, B, m1, n1);
@@ -63,7 +63,7 @@ int main()
 		cout << "\r\n";
 	}
 
-	else if (m1 == m2 && n1 == n2 && pos2 != -1)               // both matrices dimensions must be equal
+	else if (m1 == m2 && m1 !=0 && n1 == n2 && pos2 != -1)               // both matrices dimensions must be equal
 	{
 		cout << "The subtraction result=" << endl;
 		C = M.sub_matrix(A, B, m1, n1);
@@ -71,7 +71,7 @@ int main()
 		cout << "\r\n";
 	}
 
-	else if (n1 == m2 && pos3 != -1)                      // column of matrix A must be equal to row of matrix B
+	else if (n1 == m2 && m2 !=0 && pos3 != -1)                      // column of matrix A must be equal to row of matrix B
 	{
 		cout << "The multiplication result=" << endl;
 		C = M.multiply_matrix(A, B, m1, n2);
@@ -83,13 +83,6 @@ int main()
 
 	else
 		cout << "Oh!! Error Good Bye" << endl;
-
-
-
-
-
-
-
 
 
 
