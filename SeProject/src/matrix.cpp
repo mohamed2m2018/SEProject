@@ -127,14 +127,15 @@ float** matrix::sub_matrix(float** A, float** B, int rows, int columns)
 		return result;
 	}
 
-float**matrix:: multiply_matrix(float** A, float** B, int rows, int columns)
+
+	float** multiply_matrix(float** A, float** B, int rows, int columns,int n1)
 	{
 		float** result = createEmptyMatrix(rows, columns);
 		for (int i = 0; i < rows; i++)
 		{
 			for (int j = 0; j < columns; j++)
 			{
-				for (int k = 0; k < columns; k++)
+				for (int k = 0; k < n1; k++)
 					result[i][j] += A[i][k] * B[k][j];
 			}
 		}
