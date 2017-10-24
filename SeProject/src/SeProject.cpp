@@ -25,7 +25,7 @@ void Error_message()
 	}
 int main()
 {
-	ifstream input(rightformat.txt); //waels
+	ifstream input("rightformat.txt"); //waels
 	string s1, s2, op,vName1,vName2;
 	float** A, ** B, ** C;
 	matrix M;
