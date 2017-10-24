@@ -119,7 +119,7 @@ int main()
 	{
 		Error_message();
 		//getline(cin, s2); waels delete
-		input>>s2 //waels
+		input>>s2; //waels
 		if (s2=="y"||s2=="yes"|| s2=="Y"||s2=="Yes")
 		{
 			continue ;
