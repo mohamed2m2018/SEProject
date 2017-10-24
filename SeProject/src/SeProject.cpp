@@ -202,7 +202,7 @@ int main()
 			continue;
 		}
 		cout << "The multiplication result=" << endl;
-		C = M.multiply_matrix(A, B, m1, n2);
+		C = M.multiply_matrix(A, B, m1, n2,n1);
 		M.print_matrix(C, m1, n2);
 		cout << "\r\n";
 	}
