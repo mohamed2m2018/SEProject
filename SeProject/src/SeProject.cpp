@@ -36,7 +36,7 @@ int main()
 	cout <<"-----------------------------------------------------------------------\n";
 	cout <<"-----------------------------------------------------------------------\n";
 //while(1){ waelsdelete 
-	cout << "the input is at file called (right format) in the required format" ;//wael
+	cout << "the input is at file called (right format) in the required format\n" ;//wael
 	while (getline(input,s1)&&getline(input,s2)&&getline(input,op)){  //waels
 
 
@@ -48,14 +48,16 @@ int main()
 		return 0;
 	//
 
-	if( s1 == ""  || s1.find("[") == -1) // l goz2 da kol mara hy3ml return 0 ella lw dakhlt l input fl file b special order waels
+	while( s1 == ""  || s1.find("[") == -1) // l goz2 da kol mara hy3ml return 0 ella lw dakhlt l input fl file b special order waels
 	{
 	Error_message();//prints out to the screen error message
-	//getline(cin, s1); waelsdelete
-	input>>s1; //waels edit
+	getline(cin, s1);// waelsdelete
+	//input>>s1; //waels edit
 	if (s1=="y"||s1=="yes"|| s1=="Y"||s1=="Yes")
 	{
-		continue ;
+		cout << "Please Re-enter the first matrix in the right form in order to coninue\n";
+		getline(cin, s1);
+	
 	}
 	else {
 		return 0;
@@ -70,7 +72,7 @@ int main()
 	if( m1<=0)				// l goz2 da kol mara hy3ml return 0 ella lw dakhlt l input fl file b special order waels
 	{
 		Error_message();
-		//getline(cin, s1);  waelsdelete
+		getline(cin, s1);  //waelsdelete
 		input>>s1; //waels
 		if (s1=="y"||s1=="yes"|| s1=="Y"||s1=="Yes")
 		{
@@ -95,14 +97,15 @@ int main()
 			return 0;
 		}
 
-		if( s2 == ""  || s2.find("[") == -1) 	 // l goz2 da kol mara hy3ml return 0 ella lw dakhlt l input fl file b special order waels
+		while( s2 == ""  || s2.find("[") == -1) 	 // l goz2 da kol mara hy3ml return 0 ella lw dakhlt l input fl file b special order waels
 	{
 		Error_message();//prints out an error message
-		//getline(cin, s2); waelsdelete
-		input>>s2; //waels
+		getline(cin, s2);// waelsdelete
+		//input>>s2; //waels
 		if (s2=="y"||s2=="yes"|| s2=="Y"||s2=="Yes")
 		{
-			continue ;
+			cout << "Please Re-enter the second matrix in the right form in order to coninue\n";
+			getline(cin, s2);
 		}
 		else {
 			return 0;
@@ -118,7 +121,7 @@ int main()
 	if( m2<=0)		// l goz2 da kol mara hy3ml return 0 ella lw dakhlt l input fl file b special order waels
 	{
 		Error_message();
-		//getline(cin, s2); waels delete
+		getline(cin, s2);// waels delete
 		input>>s2; //waels
 		if (s2=="y"||s2=="yes"|| s2=="Y"||s2=="Yes")
 		{
@@ -138,12 +141,12 @@ int main()
 
 	//cout << "please enter the required operation:\nlike:C=A+B  or\nlike:C=A-B  or\nlike:C=A*B or\nlike:C=A' or\nlike:C=B'" << endl; waelsdelete
 	//getline(cin, op); waels delete
-		while(op.find("+")==-1&&op.find("-")&&op.find("*")&&op.find("'")&&op!="exit")
+		while(op.find("+")==-1&&op.find("-")==-1&&op.find("*")==-1&&op.find("'")==-1&&op!="exit")
 		{
 			
 			// l goz2 da lazmlo ani adkhl l input fl file b special order waels
 			cout<<"OOPS.,Sorry you have enterd not valid or wrong operation,please try again considering this format \nlike:C=A+B  or\nlike:C=A-B  or\nlike:C=A*B or\nlike:C=A' or\nlike:C=B'\n";
-			//getline(cin, op);
+			getline(cin, op);
 			input>>op; //waels edit
 		}
 	if(IS_terminated(op))
@@ -163,7 +166,7 @@ int main()
     }
 
 
-	else if (op.find("+")!=-1 && m1 == m2 && m1 !=0 && n1 == n2)                    // both matrices dimensions must be equal
+	else if ((op.find("+"))!=(-1) && m1 == m2 && m1 !=0 && n1 == n2)                    // both matrices dimensions must be equal
 	{
 		
 		
@@ -192,8 +195,12 @@ int main()
 			cout << "\r\n";
 		}
 
-	else if ( op.find("*") != -1)                      // column of matrix A must be equal to row of matrix B
+	else if ( op.find("*") != -1  )                      // column of matrix A must be equal to row of matrix B
 	{
+		if (n1 != m2) {
+			cout << "these two matrices can not be multipled\n";
+			continue;
+		}
 		cout << "The multiplication result=" << endl;
 		C = M.multiply_matrix(A, B, m1, n2);
 		M.print_matrix(C, m1, n2);
@@ -207,6 +214,8 @@ int main()
 
 
 	}
+	
+	input.close();
 
 	return 0;
 }
