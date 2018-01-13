@@ -28,8 +28,19 @@ public:
 	float** createEmptyMatrix(int rows, int columns);
 	float** sum_matrix(float** A, float** B, int rows, int columns);
 	float** sub_matrix(float** A, float** B, int rows, int columns);
-	float** multiply_matrix(float** A, float** B, int rows, int columns);
-	float** Transpose_matrix(float** A, int rows, int columns);
+	float** multiply_matrix(float** A, float** B, int rows, int columns,int n1);
+	float** division_By_One(float** A ,int rows ,int columns);                 //Farag
+    float** partial_pivoting (float ** C ,int rows ,int i);
+	float** divide_matrix (float **A , float** B , int rows ,int columns , int n1); //added by salah :D
+	float** Transpose_matrix(float** A, int rows, int columns);	
+	float** zeros_matrix(int rows, int columns);	//torres
+	float** ones_matrix(int rows, int columns);	
+	float** eye_matrix(int rows, int columns);                      // matrix.h
+	float** rand_matrix(int rows, int columns);		
+	float** Exponential(float** A ,int rows ,int columns);
+	float** Log_Base10(float** A ,int rows ,int columns);
+	float** Log_Base2(float** A ,int rows ,int columns);
+	float** Natural_Log(float** A ,int rows ,int columns);
 	void print_matrix(float** A, int rows, int columns);
 };
 
