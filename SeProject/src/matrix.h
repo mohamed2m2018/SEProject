@@ -42,6 +42,7 @@ public:
 	float** Log_Base2(float** A ,int rows ,int columns);
 	float** Natural_Log(float** A ,int rows ,int columns);
 	float** Sin_M(float** A ,int rows ,int columns);
+	float** Cos_M(float** A ,int rows ,int columns);
 	void print_matrix(float** A, int rows, int columns);
 };
 
