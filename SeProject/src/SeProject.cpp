@@ -291,14 +291,23 @@ int main()
 
 
 		else if ( op.find("exp") != -1 )
-	{
-          printf("The exp result=\n");
-          C=M.Exponential(A,m1,n1);
-          M.print_matrix(C, m1, n2);
+		{
+		  printf("The exp result=\n");
+		  C=M.Exponential(A,m1,n1);
+		  M.print_matrix(C, m1, n2);
 
-          data.push_back(C);
-          mapped[str[7]]=data[7];
-	}
+		  data.push_back(C);
+		  mapped[str[7]]=data[7];
+		}
+		
+		else if ( op.find("sin") != -1 )
+		{
+		  printf("The sin result=\n");
+		  C=M.Sin_M(A,m1,n1);
+		  M.print_matrix(C, m1, n2);
+		  data.push_back(C);
+		  //mapped[str[9]]=data[9];
+		}
 
 
 
