@@ -318,7 +318,14 @@ int main()
 		  //mapped[str[9]]=data[9];
 		}
 		
-		
+		else if ( op.find("tan") != -1 )
+		{
+		  printf("The tan result=\n");
+		  C=M.Tan_M(A,m1,n1);
+		  M.print_matrix(C, m1, n2);
+		  data.push_back(C);
+		  //mapped[str[9]]=data[9];
+		}
 
 
 	else
