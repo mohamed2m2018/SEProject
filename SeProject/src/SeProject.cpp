@@ -195,17 +195,111 @@ int main()
 			cout << "\r\n";
 		}
 
-	else if ( op.find("*") != -1  )                      // column of matrix A must be equal to row of matrix B
+
+	else if ( op.find("*") != -1 )                      // column of matrix A must be equal to row of matrix B
 	{
-		if (n1 != m2) {
-			cout << "these two matrices can not be multipled\n";
-			continue;
-		}
-		cout << "The multiplication result=" << endl;
-		C = M.multiply_matrix(A, B, m1, n2,n1);
-		M.print_matrix(C, m1, n2);
-		cout << "\r\n";
+		if (n1 != m2)
+            {
+			    printf("these two matrices can not be multipled\n");
+			    continue;
+		    }
+                printf("The multiplication result=\n");
+                C = M.multiply_matrix(A, B, m1, n2,n1);
+                M.print_matrix(C, m1, n2);
+                data.push_back(C);
+                mapped[str[2]]=data[2];
 	}
+
+    else if(op.find("./") != -1)
+    {
+
+          printf("The division by one result=\n");
+          C=M.division_By_One(A,m1,n1);
+          M.print_matrix(C, m1, n2);
+
+
+    }
+
+    else if ( op.find("/") != -1 )
+	{
+	    if (m1 != n1 ||m2!=n2||m1!=m2)
+            {
+                    printf("these two matrices can not be divided , the martix must be squared \n");
+                    continue;
+            }
+                    printf("The division result=\n");
+                    C=M.divide_matrix(A,B,m2,n2,n1);
+                    M.print_matrix(C, m1, n2);
+                    data.push_back(C);
+                    mapped[str[3]]=data[3];
+
+	}
+
+	else if (op.find("zeros")!=-1)
+		{
+			printf("The Zeros result=\n");
+			string T1 = op.substr(op.find('(')+1,1);
+			string T2 = op.substr(op.find(')')-1,1);
+			int t1 =atoi(T1.c_str());
+			int t2 =atoi(T2.c_str());
+			C = M.zeros_matrix(t1, t2);
+			M.print_matrix(C, t1, t2);
+			data.push_back(C);
+			//mapped[str[1]]=data[1];
+
+		}
+
+	else if (op.find("ones")!=-1)
+		{
+			printf("The ones result=\n");
+			string T1 = op.substr(op.find('(')+1,1);
+			string T2 = op.substr(op.find(')')-1,1);
+			int t1 =atoi(T1.c_str());
+			int t2 =atoi(T2.c_str());
+			C = M.ones_matrix(t1, t2);
+			M.print_matrix(C, t1, t2);
+			data.push_back(C);
+			//mapped[str[1]]=data[1];
+
+		}
+		else if (op.find("eye")!=-1)
+		{
+			printf("The eye result=\n");
+			string T1 = op.substr(op.find('(')+1,1);
+			string T2 = op.substr(op.find(')')-1,1);
+			int t1 =atoi(T1.c_str());
+			int t2 =atoi(T2.c_str());
+			C = M.eye_matrix(t1, t2);
+			M.print_matrix(C, t1, t2);
+			data.push_back(C);
+			//mapped[str[1]]=data[1];
+
+		}
+		else if (op.find("rand")!=-1)
+		{
+			printf("The rand result=\n");
+			string T1 = op.substr(op.find('(')+1,1);
+			string T2 = op.substr(op.find(')')-1,1);
+			int t1 =atoi(T1.c_str());
+			int t2 =atoi(T2.c_str());
+			C = M.rand_matrix(t1, t2);
+			M.print_matrix(C, t1, t2);
+			data.push_back(C);
+			//mapped[str[1]]=data[1];
+
+		}
+
+
+		else if ( op.find("exp") != -1 )
+	{
+          printf("The exp result=\n");
+          C=M.Exponential(A,m1,n1);
+          M.print_matrix(C, m1, n2);
+
+          data.push_back(C);
+          mapped[str[7]]=data[7];
+	}
+
 
 
 
