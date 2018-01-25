@@ -141,7 +141,7 @@ int main()
 
 	//cout << "please enter the required operation:\nlike:C=A+B  or\nlike:C=A-B  or\nlike:C=A*B or\nlike:C=A' or\nlike:C=B'" << endl; waelsdelete
 	//getline(cin, op); waels delete
-		while(op.find("+")==-1&&op.find("-")==-1&&op.find("*")==-1&&op.find("'")==-1&&op!="exit")
+		while(op.find("+")==-1&&op.find("-")==-1&&op.find("*")==-1&&op.find("'")==-1&&op.find("sin")==-1 &&op.find("cos")==-1 &&op.find("tan")==-1&&op!="exit")
 		{
 			
 			// l goz2 da lazmlo ani adkhl l input fl file b special order waels
