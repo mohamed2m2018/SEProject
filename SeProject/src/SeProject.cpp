@@ -309,7 +309,16 @@ int main()
 		  //mapped[str[9]]=data[9];
 		}
 
-
+		else if ( op.find("cos") != -1 )
+		{
+		  printf("The cos result=\n");
+		  C=M.Cos_M(A,m1,n1);
+		  M.print_matrix(C, m1, n2);
+		  data.push_back(C);
+		  //mapped[str[9]]=data[9];
+		}
+		
+		
 
 
 	else
