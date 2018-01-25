@@ -158,6 +158,70 @@ float**matrix:: Transpose_matrix(float** A, int rows, int columns)
 		return result;
 	}
 
+	float** matrix::zeros_matrix(int rows, int columns)
+{
+	float** result = createEmptyMatrix(rows, columns);            // matrix.cpp
+
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < columns; j++)
+		{
+			result[i][j] = 0;
+		}
+	}
+
+	return result;
+}
+
+float** matrix::ones_matrix(int rows, int columns)
+{
+	float** result = createEmptyMatrix(rows, columns);
+
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < columns; j++)
+		{
+			result[i][j] = 1;
+		}
+	}
+
+	return result;
+}
+
+float** matrix::eye_matrix(int rows, int columns)
+{
+	float** result = createEmptyMatrix(rows, columns);
+
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < columns; j++)
+		{
+			if(i!=j)
+			result[i][j] = 0;
+			else
+			result[i][j] = 1;
+		}
+	}
+
+	return result;
+}
+
+float** matrix::rand_matrix(int rows, int columns)
+{
+	float** result = createEmptyMatrix(rows, columns);
+
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < columns; j++)
+		{
+			result[i][j] = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+		}
+	}
+
+	return result;
+}
+
+
 void matrix::print_matrix(float** A, int rows, int columns)
 	{
 
