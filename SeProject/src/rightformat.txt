@@ -1,4 +1,17 @@
-
-
-
-
+A = [8.9 7.3 4.8 2.4 5.5 3.7 2.4 9.5];
+B = [1.2 3.4 5.6 7.8 5.5 3.7 2.4 9.5];
+C = A + B
+D = A - B
+E = A * B
+H = C'
+G = 1 ./ A
+F = A / B
+H = exp(A)
+I = log(A)
+J = log10(A)
+K = log2(A)
+S = sqrt(A)
+P = A^3
+X = sin(A)
+Y = cos(A)
+Z = tan(A)
