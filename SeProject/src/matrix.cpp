@@ -222,6 +222,25 @@ float** matrix::rand_matrix(int rows, int columns)
 }
 
 
+float** matrix::Sin_M(float** A ,int rows ,int columns)
+{
+   float** result = createEmptyMatrix(rows, columns);
+
+		for (int i = 0; i < rows; i++)
+		{
+			for (int j = 0; j < columns; j++)
+			{
+				result[i][j] = sin(A[i][j]);
+
+			}
+		}
+
+		return result;
+
+}
+
+
+
 void matrix::print_matrix(float** A, int rows, int columns)
 	{
 
